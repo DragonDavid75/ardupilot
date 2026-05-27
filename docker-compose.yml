@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  # The service name
+  ardupilot_service:
+    image: ardupilot/ardupilot-dev-chibios
+    # The container name (equivalent to --name)
+    container_name: ardupilot_container
+    stdin_open: true
+    tty: true
+    privileged: true
+    network_mode: host
+    pid: host
+    ipc: host
+    volumes:
+      - .:/ardupilot
+    command: /bin/bash
