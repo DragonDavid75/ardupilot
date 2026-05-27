@@ -14,4 +14,4 @@ services:
     ipc: host
     volumes:
       - .:/ardupilot
-    command: /bin/bash
+    command: /bin/bash /ardupilot/build_ushield_sub.sh
