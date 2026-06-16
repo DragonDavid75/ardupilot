@@ -60,7 +60,7 @@ PE6 SPI4_MOSI SPI4
 PF7 SPI5_SCK SPI5
 PF8 SPI5_MISO SPI5
 PF9 SPI5_MOSI SPI5
-# PF6 SPI5_NSS SPI5 # PF6 or PH5
+PF6 SPI5_NSS SPI5 # PF6 or PH5
 
 # SPI6 - external2 (As master)
 PG13 SPI6_SCK SPI6
@@ -160,27 +160,28 @@ COMPASS MMC5XX3 SPI:mmc5xx3 false ROTATION_NONE
 
 define HAL_MAG_PROBE_MMC5XX3 1
 define AP_COMPASS_MMC5XX3_ENABLED 1
+define HAL_COMPASS_AUTO_ROT_DEFAULT 2
 
 # one baro
 BARO MS56XX SPI:ms5611
 
-# Safety switch input
+# Safety switch
+## SW input
 PE10 SAFETY_SWITCH_IN INPUT PULLDOWN GPIO(95) # Physical pin for the button press
 define HAL_GPIO_PIN_SAFEBUTTON 95 # Define which pin is the safety button
 
-#  Safety Switch LED (blue LED)
+## SW LED (blue LED)
 PE12 LED_SAFETY OUTPUT OPENDRAIN GPIO(92)
 define HAL_GPIO_PIN_SAFETY_LED 92
 
-# allow to have have a dedicated safety switch pin
+## allow to have have a dedicated safety switch pin
 define HAL_HAVE_SAFETY_SWITCH 1
 
-define HAL_COMPASS_AUTO_ROT_DEFAULT 2
+# "Relay" Trigger
+PC13 RELAY_1 OUTPUT
 
 # Explicitly define the DMA stream for the compiler
 DMA_PRIORITY  ADC* SPI* TIM* UART*
-
-# define HAL_SPI_CHECK_CLOCK_FREQ 1
 
 ROMFS io_firmware.bin Tools/IO_Firmware/iofirmware_lowpolh.bin
 # enable support for dshot on iomcu
