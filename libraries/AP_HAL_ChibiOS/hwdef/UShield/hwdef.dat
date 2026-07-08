@@ -14,6 +14,8 @@ define HAL_CHIBIOS_ARCH_FMUV5 1
 # Use the last 32KB of flash for parameter storage
 define HAL_STORAGE_SIZE 32768
 
+STORAGE_FLASH_PAGE 10
+
 ### board ID for firmware load
 # Select from board_types.txt or choose one that does not match for personalised boards
 APJ_BOARD_ID TARGET_HW_PX4_FMU_V5 
@@ -34,6 +36,7 @@ define HAL_DISABLE_ADC_DRIVER
 
 ### order of UARTs (and USB)
 # OTG1 USART2 USART3 USART1 UART4 USART6 UART7 OTG2
+define HAL_USE_USB TRUE
 SERIAL_ORDER OTG1 USART2 USART3
 
 # now we define the pins that USB is connected on
