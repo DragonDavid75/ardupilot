@@ -163,7 +163,8 @@ bool AP_Baro_MS56XX::_init()
     _dev->set_device_type(devtype);
     set_bus_id(_instance, _dev->get_bus_id());
 
-    if (_ms56xx_type == BARO_MS5837) {
+    if (_ms56xx_type == BARO_MS5837 || 
+        _ms56xx_type == BARO_MS5611) {
         _frontend.set_type(_instance, AP_Baro::BARO_TYPE_WATER);
     }
 
