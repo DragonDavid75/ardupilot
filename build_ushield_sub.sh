@@ -12,6 +12,6 @@ echo "=== 2. Configuring Waf for UShield board ==="
 ./waf configure --board UShield
 
 echo "=== 3. Compiling Sub firmware ==="
-./waf sub
+./waf sub -j$(nproc)
 
 echo "=== Build Process Completed Successfully ==="
