@@ -22,5 +22,6 @@ FRAME_CONFIG 2
 # 6 = DShot600 (High-speed digital protocol)
 MOT_PWM_TYPE 6
 
+# --- Relay configuration section ---
 RELAY1_PIN 80
 RELAY1_DEFAULT 1
