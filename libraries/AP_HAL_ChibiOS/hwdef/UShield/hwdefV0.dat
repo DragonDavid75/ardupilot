@@ -1,6 +1,3 @@
-# hw definition file for processing by chibios_hwdef.py
-# for FMUv5 hardware (ie. for CUAV-PixHack-v5 and Pixhawk4)
-
 # MCU class and specific type. It is a F765, which is the same as F767
 # but without the TFT interface
 MCU STM32F7xx STM32F767xx
