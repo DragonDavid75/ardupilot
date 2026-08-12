@@ -1,3 +1,7 @@
+# @file        docker-compose.yml
+# @brief       Docker Compose description file 
+# @author      David Rodriguez Ferrero
+
 services:
   # The service name
   ardupilot_service:

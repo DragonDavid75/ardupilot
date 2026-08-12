@@ -1,3 +1,7 @@
+# @file        hwdef.dat
+# @brief       Hardware configuration for the Ardupilot project for the UShield FC
+# @author      David Rodriguez Ferrero
+
 # hw definition file for processing by chibios_hwdef.py
 # for FMUv5 hardware (ie. for CUAV-PixHack-v5 and Pixhawk4)
 

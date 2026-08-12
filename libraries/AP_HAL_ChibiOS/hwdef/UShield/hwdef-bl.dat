@@ -1,3 +1,7 @@
+# @file        hwdef-bl.dat
+# @brief       Bootloader hwdef configuration for the UShield FC
+# @author      David Rodriguez Ferrero
+
 # hw definition file for the bootloader for FMUv5
 # for FMUv5 hardware (ie. for CUAV-PixHack-v5 and Pixhawk4)
 

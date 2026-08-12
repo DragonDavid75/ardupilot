@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# @file        build_ushield_sub.sh
+# @brief       Script used to build ArduSub for the UShield FC in the Docker container
+# @author      David Rodriguez Ferrero
+
 # Exit immediately if any command exits with a non-zero status
 set -e
 

@@ -1,3 +1,7 @@
+# @file        hwdefV0.dat
+# @brief       Old hardware configuration for the Ardupilot project for the UShield FC (Only used for the original version of the FC with modifications)
+# @author      David Rodriguez Ferrero
+
 # MCU class and specific type. It is a F765, which is the same as F767
 # but without the TFT interface
 MCU STM32F7xx STM32F767xx
