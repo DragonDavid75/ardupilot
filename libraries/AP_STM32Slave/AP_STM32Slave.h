@@ -1,3 +1,9 @@
+/**
+ * @file        AP_STM32Slave.h
+ * @brief       SPI communication test driver.
+ * @author      David Rodriguez Ferrero
+ */
+
 #pragma once
 
 #include <AP_HAL/AP_HAL.h>

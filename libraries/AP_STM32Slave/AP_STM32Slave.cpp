@@ -1,3 +1,9 @@
+/**
+ * @file        AP_STM32Slave.cpp
+ * @brief       SPI communication test driver.
+ * @author      David Rodriguez Ferrero
+ */
+
 #include "AP_STM32Slave.h"
 
 extern const AP_HAL::HAL& hal;
@@ -28,9 +34,12 @@ void AP_STM32Slave::_timer_tick() {
         return;
     }
 
-    // Full-duplex transfer
-    // Note: SPIDevice automatically manages the bus semaphore inside register_periodic_callback
-    if (_dev->transfer(_tx_buf, sizeof(_tx_buf), _rx_buf, sizeof(_rx_buf))) {
+    
+    // buf is used for output and input for full-duplex communication
+    uint8_t buf[4] = {0x01, 0x02, 0x03, 0x04};
+
+    if (_dev->transfer(buf, 4, buf, 4)) {
+        memcpy(_rx_buf, buf, 4);
         _last_transfer_ms = AP_HAL::millis();
     }
 }
