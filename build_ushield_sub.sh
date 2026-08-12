@@ -3,15 +3,23 @@
 # Exit immediately if any command exits with a non-zero status
 set -e
 
+# Navigate to ardupilot directory
 cd ardupilot
 
 echo "=== 1. Configuring Git safe directory ==="
 git config --global --add safe.directory '*'
 
-echo "=== 2. Configuring Waf for UShield board ==="
-./waf configure --board UShield
+echo "=== 2. Validating Board Target ==="
+BOARD_NAME="UShield"
+if [ ! -d "libraries/AP_HAL_ChibiOS/hwdef/${BOARD_NAME}" ]; then
+    echo "Error: Board directory 'libraries/AP_HAL_ChibiOS/hwdef/${BOARD_NAME}' not found!"
+    exit 1
+fi
 
-echo "=== 3. Compiling Sub firmware ==="
+echo "=== 3. Configuring Waf for ${BOARD_NAME} ==="
+./waf configure --board "${BOARD_NAME}"
+
+echo "=== 5. Compiling Sub Firmware ==="
 ./waf sub -j$(nproc)
 
 echo "=== Build Process Completed Successfully ==="
