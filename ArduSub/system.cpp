@@ -37,6 +37,8 @@ void Sub::init_ardupilot()
 
     barometer.init();
 
+    stm32_slave.init();
+
 #if AP_FEATURE_BOARD_DETECT
     // Detection won't work until after BoardConfig.init()
     switch (AP_BoardConfig::get_board_type()) {

@@ -63,6 +63,7 @@
 #include <AP_LeakDetector/AP_LeakDetector.h> // Leak detector
 #include <AP_Proximity/AP_Proximity.h>
 #include <AP_Rally/AP_Rally.h>
+#include <AP_STM32Slave/AP_STM32Slave.h>
 
 // Local modules
 #include "defines.h"
@@ -105,6 +106,8 @@
 
 class Sub : public AP_Vehicle {
 public:
+    AP_STM32Slave stm32_slave;
+
     friend class GCS_MAVLINK_Sub;
     friend class GCS_Sub;
     friend class Parameters;
