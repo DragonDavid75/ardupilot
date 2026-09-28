@@ -189,6 +189,13 @@ define HAL_GPIO_PIN_SAFETY_LED 92
 ## allow to have have a dedicated safety switch pin
 define HAL_HAVE_SAFETY_SWITCH 1
 
+# Scripting
+## Enable for Lua scripting
+define HAL_SCRIPTING_ENABLED 1
+
+## SD card SPI interface
+SPIDEV sdcard SPI6 DEVID1 EXTERNAL_CS1 MODE3 400*KHZ 25*MHZ
+
 # "Relay" Trigger
 # PC13 RELAY_1 OUTPUT HIGH 
 PC13 GPIO OUTPUT HIGH GPIO(80)
